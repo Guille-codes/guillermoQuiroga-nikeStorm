@@ -1,0 +1,383 @@
+@import "variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../img/Fondo2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body::-webkit-scrollbar{
+    width: 15px;
+}
+body::-webkit-scrollbar-thumb{
+    background: #636262;
+    border-radius: 20px;
+    width: 10px;
+    border: 3px solid #141514;
+}
+body::-webkit-scrollbar-thumb:hover{
+    background: #868686;
+}
+body::-webkit-scrollbar-track{
+    background: #141514;
+}
+.navbar-toggler{
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+.navbar ul li{
+    position: relative;
+    a{
+        font-family: 'Open Sans', sans-serif;
+        color: $white;
+        font-weight: 300;
+        text-decoration: none;
+    }
+    &:after{
+        content: "";
+        height: 4px;
+        width: 0;
+        background-color: $light-blue;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 50%;
+        transition: all 0.5s;
+        will-change: width;
+    }
+    &:hover:after{
+        width: 100%;
+        right: 0;
+    }
+}
+.header-lupa i{
+    font-size: 1.4rem;
+    color: $white;
+}
+.header-shop i{
+    font-size: 1.4rem;
+    color: $white;
+}
+.header-user i{
+    font-size: 2.5rem;
+    color: $white;
+    transition: all 0.5s;
+    &:hover{
+        color: $light-blue;
+    }
+
+}
+main{
+    font-family: 'Montserrat', sans-serif;
+    color: $white;
+    font-size: 0.9rem;
+    span{
+        color: $light-blue;
+    }
+}
+.main-snikers img{
+    transition: all 1s;
+    &:hover{
+        transform: scale(1.01) translate(10px, 12px);
+    }
+}
+.coleccion-article{
+    transition: all 1s;
+    &:hover{
+        transform: translate(10px, 5px);
+    }
+}
+.join-conteiner{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 12px;
+    grid-template-areas: "article1 article1 article1 article5"
+                        "article2 article3 article4 article5";
+}
+.article1{
+    grid-area: article1;
+    transition: all 1s;
+    &:hover{
+        grid-area: article1;
+        transform: scale(1.01);
+    }
+}
+.article2{
+    grid-area: article2;
+    transition: all 1s;
+    &:hover{
+        grid-area: article2;
+        transform: scale(1.01);
+    }
+}
+.article3{
+    grid-area: article3;
+    transition: all 1s;
+    &:hover{
+        grid-area: article3;
+        transform: scale(1.01);
+    }
+}
+.article4{
+    grid-area: article4;
+    transition: all 1s;
+    &:hover{
+        grid-area: article4;
+        transform: scale(1.01);
+    }
+}
+.article5{
+    grid-area: article5;
+    transition: all 1s;
+    &:hover{
+        grid-area: article5;
+        transform: scale(1.01);
+    }
+}
+.main-shop--image{
+    transition: all 1s;
+    &:hover{
+        transform: scale(1.02);
+    }
+}
+.main-shop4{
+    p{
+        font-size: 3rem;
+    }
+    a {
+    color: $light-blue;
+    text-decoration: none;
+    }
+}
+.main-shop5 p{
+    font-size: 0.9rem;
+}
+.main-shop6{
+    font-weight: 700;
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $offbackground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    a{
+        color: $white;
+    }
+}
+footer{
+    margin-top: auto;
+    a{
+        text-decoration: none;
+    }
+}
+@each $clave, $var in $colores {
+    .btn-#{$clave}{
+        background-color: $var;
+    }
+}
+.btn1 a{
+    text-decoration: map-get($btn1, text-decoration);
+    color: map-get($btn1, color);
+    font-weight: map-get($btn1, font-weight);
+    width: map-get($btn1, width);
+    height: map-get($btn1, height);
+    border-radius: map-get($btn1, border-radius);
+    background: map-get($btn1, background-color);
+    display: map-get($btn1, display);
+    justify-content: map-get($btn1, justify-content);
+    align-items: map-get($btn1, align-items);
+    border-top: map-get($btn1, border-top);
+    border-left: map-get($btn1, border-left);
+    backdrop-filter: map-get($btn1, backdrop-filter);
+    box-shadow: map-get($btn1, box-shadow);
+    transition: map-get($btn1, transition);
+    &:hover{
+        color: $light-blue;
+    }
+}
+.btn2 a{
+    color: map-get($btn2 , color);
+    font-weight: map-get($btn2 , font-weight);
+    width: map-get($btn2 , width);
+    height: map-get($btn2 , height);
+    border-radius: map-get($btn2 , border-radius);
+    background-color: map-get($btn2 , background-color);
+    display: map-get($btn2 , display);
+    justify-content: map-get($btn2 , justify-content);
+    align-items: map-get($btn2 , align-items);
+    text-decoration: map-get($btn2 , text-decoration);
+    font-size: map-get($btn2 , font-size);
+}
+.btn3{
+    @extend .main-shop6;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+    color: $black;
+    height: 40px;
+    transition-duration: 0.4s;
+    &:hover{
+        background-color: $light-blue; 
+        color: $black;
+        border: none;
+    }
+}
+@mixin PropiedadesFlex ($display, $justify, $margin-top){
+    display: $display;
+    justify-content: $justify;
+    margin-top: $margin-top;
+}
+.btn1{
+    @include PropiedadesFlex(flex, center, 40px);
+    a{
+        &:hover{
+            transform: scale(1.03);
+        }
+        img{
+            width: 25px;
+            height: 25px;
+            margin-left: 9px;
+        }
+    }
+}
+.form-group input{
+    border: 1px solid $white;
+    border-radius: 4px;
+    background-color: $offbackground;
+
+}
+.form-group textarea{
+    border: 1px solid $white;
+    border-radius: 4px;
+    background-color: $offbackground;
+}
+.button{
+    background-color: $offbackground;
+    border: 1px solid $white;
+    border-radius: 4px;
+    color: $white;
+    width: 90px;
+    height: 40px;
+    transition-duration: 0.4s;
+    &:hover{
+        background-color: $light-blue; 
+        color: $black;
+        border: none;
+    }
+}
+
+.wrapper{
+    display: inline-flex;
+}
+.wrapper .icon{
+    margin: 0 4px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span{
+    display: block;
+    height: 37px;
+    width: 37px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper i{
+    line-height: 38px;
+    font-size: 20px;
+}
+.wrapper .icon .tooltip{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip{
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.icon .tooltip:before{
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    background: #fff;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper{
+    a{
+        color: black;
+    }
+
+}
+.wrapper .icon:hover span{
+    color: #fff;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip:before{
+    background: #3B5999;
+}
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before{
+    background: #46C1F6;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+    background: #e1306c;
+}
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip:before{
+    background: #333;
+}
+.wrapper .youtube:hover span,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip:before{
+    background: #DE463B;
+}
